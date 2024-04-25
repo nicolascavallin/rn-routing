@@ -179,7 +179,11 @@ const Tab3 = () => {
 
 const BottomTab = createBottomTabNavigator();
 
-const BottomTabApp = () => {
+type BottomTabProps = NativeStackScreenProps<
+  MainStackParamList,
+  'BottomTabApp'
+>;
+const BottomTabApp: FC<BottomTabProps> = () => {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen name="Tab1" component={Tab1} />
@@ -189,7 +193,8 @@ const BottomTabApp = () => {
   );
 };
 
-const FullScreen = () => {
+type FullScreenProps = NativeStackScreenProps<MainStackParamList, 'FullScreen'>;
+const FullScreen: FC<FullScreenProps> = () => {
   return (
     <View style={{flex: 1, backgroundColor: '#ccc'}}>
       <Text>FullScreen</Text>
